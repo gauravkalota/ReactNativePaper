@@ -10,8 +10,8 @@ import { View, Image,StyleSheet, SafeAreaView, Platform } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-
 import RootNavigator from './src/navigation/index'
+import theme from './src/theme/theme';
 // function HomeScreen({ navigation }) {
 //   const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
 
@@ -158,33 +158,7 @@ import RootNavigator from './src/navigation/index'
 
 
 export default function App() {
-  const fontConfig = {
-    
-    ios: {
-      regular: {
-        fontFamily: 'Glory-ThinItalic',
-        fontWeight: 'normal',
-      }
-    },
-    android: {
-      regular: {
-        fontFamily: 'sans-serif',
-        fontWeight: 'normal',
-      },
-    }
-  };
-
-
-  const theme = {
-    ...DefaultTheme,
-    colors: {
-      ...DefaultTheme.colors,
-      primary: '#B6EDF9',       ///// primary
-      accent: '#f1c40f',
-      surface: '#618CEF'    //////containertype
-    },
-    fonts: configureFonts(fontConfig)
-  };
+ 
   return (
     <PaperProvider theme={theme}>
       <RootNavigator />

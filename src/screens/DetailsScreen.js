@@ -9,7 +9,7 @@ import CustomButton from '../components/CusButton';
 
 
 
-import { View, Image, StyleSheet, SafeAreaView, Platform } from 'react-native';
+import { View, Image,ScrollView, StyleSheet, SafeAreaView, Platform } from 'react-native';
 function DetailsScreen({ navigation }) {
 
 const [expanded, setExpanded] = React.useState(true);
@@ -18,6 +18,7 @@ const handlePress = () => setExpanded(!expanded);
 
 return (
     <SafeAreaView>
+        <ScrollView>
         <List.Section title="Accordions">
             <List.Accordion
                 title="Uncontrolled Accordion"
@@ -45,11 +46,12 @@ return (
                 <List.Item title="Second item" />
             </List.Accordion>
         </List.Section>
+
         {/* <Button icon="camera" mode="contained" onPress={() => navigation.navigate('Profile')}>
             Press me
         </Button> */}
         <CustomButton text='Press me' onpress={() => navigation.navigate('Profile')} />
-
+        </ScrollView>
 
     </SafeAreaView>
 );
